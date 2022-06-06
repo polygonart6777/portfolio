@@ -13,13 +13,13 @@ export default function Layout() {
       <section id="home">
         <Home />
       </section>
-      <section id="projects" style={{ height: "100vh" }}>
+      <section id="projects">
         <Projects />
       </section>
-      <section id="about" style={{ height: "100vh" }}>
+      <section id="about">
         <About />
       </section>
-      <section id="contact" style={{ height: "100vh" }}>
+      <section id="contact">
         <Contact />
       </section>
     </Router>

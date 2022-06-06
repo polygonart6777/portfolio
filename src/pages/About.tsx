@@ -36,9 +36,9 @@ export default function Home() {
         </Grid>
         <Grid item xs={6}>
           <Box component="h4" sx={textContainerStyle}>
-            <Typography color="#30D5C8" align="center">
+            <Typography color="#71C0D8" align="center">
               My name is{" "}
-              <Typography display="inline" color="white" fontWeight="Bold">
+              <Typography display="inline" color="#71C0D8" fontWeight="Bold">
                 Dina
               </Typography>{" "}
               and I work at the intersection of math, art, and technology. It
@@ -46,7 +46,11 @@ export default function Home() {
               mathematical topics in a tangible way to my students, through
               animations, 3d printing and laser cutting.
             </Typography>
-            <Typography sx={{ paddingTop: "1rem" }} align="center">
+            <Typography
+              sx={{ paddingTop: "1rem" }}
+              align="center"
+              color="#71C0D8"
+            >
               Along the way I learned a few languages (thank you Illustrating
               Mathematics group) and have been developing software ever since.
             </Typography>

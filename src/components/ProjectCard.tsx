@@ -31,8 +31,11 @@ export default function ProjectCard({
         borderColor: "#3d3afb",
         boxShadow: "7px 10px 15px rgb(255,0,255,.5)",
         transition: "transform 0.15s ease-in-out",
-        "&:hover": { transform: "scale3d(1.05, 1.05, 1)" },
+        "&:hover": {
+          transform: "scale3d(1.025, 1.025, 1)",
+        },
       }}
+      variant="outlined"
     >
       <CardActionArea href={hrefPage} target="_blank" rel="noreferrer">
         <CardHeader
@@ -52,7 +55,15 @@ export default function ProjectCard({
                     },
                   }}
                 >
-                  <GitHubIcon sx={{ color: "black" }} fontSize="small" />
+                  <GitHubIcon
+                    sx={{
+                      color: "#71C0D8",
+                      "&:hover": {
+                        color: "black",
+                      },
+                    }}
+                    fontSize="small"
+                  />
                 </IconButton>
               )}
               <IconButton
@@ -67,23 +78,34 @@ export default function ProjectCard({
                   },
                 }}
               >
-                <SurfingIcon sx={{ color: "black" }} fontSize="small" />
+                <SurfingIcon
+                  sx={{
+                    color: "#71C0D8",
+                    "&:hover": {
+                      color: "black",
+                    },
+                  }}
+                  fontSize="small"
+                />
               </IconButton>
             </div>
           }
-          sx={{ backgroundColor: "#860ffe", color: "black" }}
+          sx={{
+            backgroundColor: "#050A30",
+            color: "#30D5C8",
+          }}
         />
         <CardContent
           sx={{
             display: "flex",
             flexDirection: "column",
-            backgroundColor: "#190061",
             height: "12rem",
+            backgroundColor: "#050A30",
           }}
         >
           <Typography
             variant="body2"
-            color="#30D5C8"
+            color="#71C0D8"
             sx={{ paddingBottom: ".5rem" }}
           >
             {description}
@@ -92,7 +114,7 @@ export default function ProjectCard({
             {tech.map((techElement) => (
               <Typography
                 variant="body2"
-                color="#30D5C8"
+                color="#71C0D8"
                 sx={{
                   fontSize: ".8rem",
                   paddingBottom: ".5rem",
