@@ -1,0 +1,22 @@
+.NavBar {
+	background-color: #050A30;
+	position: fixed;
+	padding-top: 1rem;
+	z-index:0;
+	box-shadow: none;
+	@media (max-width:650px){
+		padding-top: 2.75rem;	
+	}
+
+  div {
+	padding-left:1rem; //Should probably do something better than this
+	padding-right:1rem;	
+	font-family:"PT Serif";
+	box-shadow: none;
+	}	
+
+	a {
+		color:white;
+		text-decoration: none;
+	}
+}
