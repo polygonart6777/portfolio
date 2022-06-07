@@ -1,27 +1,26 @@
 import React from "react";
 import { BrowserRouter as Router } from "react-router-dom";
+
+import Hidden from "@mui/material/Hidden";
+
 import NavBar from "./NavBar";
-import Home from "../pages/Home";
-import About from "../pages/About";
-import Projects from "../pages/Projects";
-import Contact from "../pages/Contact";
+import NavMenu from "./NavMenu";
+import { navigationLinks } from "../utils/navigation.js";
 
 export default function Layout() {
   return (
     <Router>
-      <NavBar />
-      <section id="home">
-        <Home />
-      </section>
-      <section id="projects">
-        <Projects />
-      </section>
-      <section id="about">
-        <About />
-      </section>
-      <section id="contact">
-        <Contact />
-      </section>
+      <Hidden smDown>
+        <NavBar />
+      </Hidden>
+      <Hidden smUp>
+        <NavMenu />
+      </Hidden>
+      {navigationLinks.map(({ id, component }) => (
+        <section id={id} key={id}>
+          {component}
+        </section>
+      ))}
     </Router>
   );
 }

@@ -21,6 +21,9 @@ export default function Home() {
         component="h2"
         sx={{
           width: "50%",
+          "@media (max-width:650px)": {
+            width: "88%",
+          },
           border: 1,
           borderColor: "#30D5C8",
           padding: "3rem",
@@ -58,7 +61,7 @@ export default function Home() {
               },
             }}
           >
-            Message me
+            Email
           </Button>
         </div>
       </Box>

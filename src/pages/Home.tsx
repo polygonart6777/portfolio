@@ -26,7 +26,7 @@ const gridStyle = {
   paddingLeft: "10rem",
   displayContent: "center",
   top: "14rem",
-  "@media (max-width:650px)": { top: "15rem", paddingLeft: "2rem" },
+  "@media (max-width:650px)": { top: "10rem", paddingLeft: "2rem" },
   zIndex: "10",
 };
 

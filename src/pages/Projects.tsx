@@ -32,7 +32,6 @@ export default function Projects() {
               key={title}
             >
               <ProjectCard
-                key={title}
                 title={title}
                 description={description}
                 tech={tech}

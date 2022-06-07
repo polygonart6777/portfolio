@@ -113,6 +113,7 @@ export default function ProjectCard({
           <div style={{ display: "flex", alignItems: "flex-end", flexGrow: 1 }}>
             {tech.map((techElement) => (
               <Typography
+                key={techElement}
                 variant="body2"
                 color="#71C0D8"
                 sx={{

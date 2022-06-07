@@ -58,7 +58,7 @@ export const DarkTheme = responsiveFontSizes(
         styleOverrides: {
           root: {
             backgroundColor: "#3d3afb",
-            opacity: "0.5",
+            opacity: ".8",
           },
         },
       },

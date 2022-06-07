@@ -7,33 +7,31 @@ import Fab from "@mui/material/Fab";
 
 import { social } from "../utils/social.js";
 
-// const useStyles = makeStyles((theme) => ({
-//     speedDial: {
-//         position: "absolute",
-//         top: theme.spacing(6),
-//         right: theme.spacing(6),
-//     },
-//     iconColor: {
-//         color: theme.palette.foreground.default,
-//     },
-// }));
-
 export default function Social() {
   const [open, setOpen] = React.useState(false);
 
   return (
     <Box
       component="div"
-      sx={{ position: "absolute", top: "2rem", right: "2rem" }}
+      sx={{ position: "absolute", bottom: "2rem", right: "2rem" }}
     >
       <SpeedDial
         ariaLabel="SpeedDial"
         hidden={false}
-        icon={<SpeedDialIcon sx={{ color: "white" }} />}
+        icon={
+          <SpeedDialIcon
+            sx={{
+              opacity: 1,
+              "a:visited": {
+                backgroundColor: "#71C0D8",
+              },
+            }}
+          />
+        }
         onClose={() => setOpen(false)}
         onOpen={() => setOpen(true)}
         open={open}
-        direction="down"
+        direction="up"
       >
         {social.map(({ network, url, icon }) => (
           <SpeedDialAction
@@ -41,8 +39,9 @@ export default function Social() {
             icon={
               <Fab
                 sx={{
-                  backgroundColor: "#ff5cb8",
-                  color: "white",
+                  backgroundColor: "#71C0D8",
+                  opacity: 1,
+                  color: "black",
                   width: "40px",
                   height: "40px",
                 }}
@@ -57,7 +56,7 @@ export default function Social() {
             target="_blank"
             rel="noopener noreferrer"
             underline="none"
-            color="inherit"
+            color="black"
           />
         ))}
       </SpeedDial>
