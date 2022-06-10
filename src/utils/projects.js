@@ -1,6 +1,6 @@
 export const projects = [
   {
-    title: "Rauzy Twitter Bot",
+    title: "Rauzy Bot",
     description: "Twitter bot that displays a new Rauzy fractal everyday.",
     tech: ["Python", "NumPy", "Matplotlib", "Twitter API"],
     hrefPage: "https://twitter.com/graphtrib/",

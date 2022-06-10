@@ -26,7 +26,7 @@ export default function ProjectCard({
   return (
     <Card
       sx={{
-        maxWidth: 340,
+        maxWidth: 320,
         borderRadius: "2.5%",
         borderColor: "#3d3afb",
         boxShadow: "7px 10px 15px rgb(255,0,255,.5)",
@@ -117,7 +117,7 @@ export default function ProjectCard({
                 variant="body2"
                 color="#71C0D8"
                 sx={{
-                  fontSize: ".8rem",
+                  fontSize: ".75rem",
                   paddingBottom: ".5rem",
                   paddingInline: ".3rem",
                   fontFamily: "Space Mono",

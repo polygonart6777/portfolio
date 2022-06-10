@@ -46,14 +46,6 @@ export const DarkTheme = responsiveFontSizes(
       },
     },
     components: {
-      MuiCssBaseline: {
-        "@global": {
-          body: {
-            color: "white",
-            backgroundColor: '"#ff5cb8"',
-          },
-        },
-      },
       MuiFab: {
         styleOverrides: {
           root: {
