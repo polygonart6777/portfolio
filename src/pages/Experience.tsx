@@ -24,6 +24,7 @@ export default function Experience() {
           paddingBottom: "2rem",
           paddingLeft: "2rem",
           paddingTop: "2rem",
+          paddingRight: "2rem",
         }}
       >
         <Box

@@ -10,7 +10,6 @@ const iconButtonStyle = {
   height: "3rem",
   width: "3rem",
   backgroundColor: "#3d3afb",
-  opacity: "0.75",
   "&:hover": {
     backgroundColor: "#71C0D8",
     opacity: "1",

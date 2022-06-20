@@ -40,8 +40,11 @@ function TabPanel(props: TabPanelProps) {
             height: 280,
             overflow: "auto",
             width: 900,
+            "@media (max-width:920px)": {
+              width: 500,
+            },
             "@media (max-width:650px)": {
-              width: 300,
+              width: 400,
             },
           }}
         >
@@ -56,9 +59,6 @@ function a11yProps(index: number) {
   return {
     id: `vertical-tab-${index}`,
     "aria-controls": `vertical-tabpanel-${index}`,
-    "@media (max-width:650px)": {
-      "aria-controls": `horizontal-tabpanel-${index}`,
-    },
   };
 }
 
@@ -68,13 +68,13 @@ export default function VerticalTabs() {
   const handleChange = (event: React.SyntheticEvent, newValue: number) => {
     setValue(newValue);
   };
-  const isMobile = useMediaQuery("(max-width:500px)");
+  const isDesktop = useMediaQuery("(min-width:920px)");
 
   return (
     <>
       <Tabs
         orientation="vertical"
-        variant={"scrollable"}
+        variant={isDesktop ? "scrollable" : "standard"}
         visibleScrollbar
         scrollButtons="auto"
         value={value}
@@ -107,6 +107,12 @@ export default function VerticalTabs() {
               "&.Mui-selected": {
                 color: "rgb(165, 255, 165,1)",
               },
+              "@media (max-width:920px)": {
+                fontSize: 12,
+                "&:hover": {
+                  fontSize: 12.25,
+                },
+              },
             }}
           />
         ))}
@@ -114,21 +120,37 @@ export default function VerticalTabs() {
       {experience.map(({ position, dates, years, tasks }, index) => (
         <TabPanel value={value} index={index}>
           <>
-            <Grid container spacing={1}>
-              <Grid item xs={5}>
-                <Typography sx={{ color: "rgb(165, 255, 165)", width: "100%" }}>
+            <Grid
+              container
+              sx={{
+                display: "flex",
+                flexDirection: "row",
+                justifyContent: "space-between",
+                alignItems: "flex-end",
+              }}
+            >
+              <Grid item sm={6} md={5}>
+                <Typography
+                  sx={{
+                    color: "rgb(165, 255, 165)",
+                    width: "100%",
+                    fontSize: "14",
+                  }}
+                >
                   {position}
                 </Typography>
               </Grid>
-              {!isMobile && (
+              {isDesktop && (
                 <Grid item xs={4}>
-                  <Typography sx={{ color: "rgb(113,192,216,.75)" }}>
+                  <Typography
+                    sx={{ color: "rgb(113,192,216,.75)", fontSize: 12 }}
+                  >
                     {dates}
                   </Typography>
                 </Grid>
               )}
-              <Grid item xs={3}>
-                <Typography sx={{ color: "rgb(113,192,216,1)" }}>
+              <Grid item sm={6} md={3} sx={{ paddingRight: "1rem" }}>
+                <Typography sx={{ color: "rgb(113,192,216,1)", fontSize: 12 }}>
                   {years["years"]} {years["years"] !== 1 ? "years" : "year"}{" "}
                   {years["months"]} {years["months"] !== 1 ? "months" : "month"}
                 </Typography>
@@ -141,14 +163,18 @@ export default function VerticalTabs() {
                     <ListItem disablePadding>
                       <ListItemButton>
                         <RightArrow
-                          fontSize="large"
+                          fontSize={isDesktop ? "large" : "medium"}
                           sx={{ color: "#3d3afb" }}
                         />
                         <ListItemText
                           primary={tasks}
-                          primaryTypographyProps={{
-                            style: { fontSize: "1.1rem" },
+                          sx={{
+                            fontSize: 16,
+                            "@media (max-width:920px)": {
+                              fontSize: 12,
+                            },
                           }}
+                          disableTypography
                         />
                       </ListItemButton>
                     </ListItem>

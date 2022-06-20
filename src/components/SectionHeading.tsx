@@ -24,9 +24,9 @@ export default function SectionHeading({ children }: SectionHeadingProps) {
         "&::after": {
           borderTop: "medium solid #3d3afb ",
         },
-        "@media (max-width:500px)": {
-          fontSize: "1.4rem",
-          width: "100%",
+        "@media (max-width:920px)": {
+          fontSize: "2rem",
+          width: "80%",
         },
       }}
     >
