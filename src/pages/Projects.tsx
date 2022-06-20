@@ -1,47 +1,47 @@
 import React from "react";
 import ProjectCard from "../components/ProjectCard";
 import Grid from "@mui/material/Grid";
+
+import SectionHeading from "../components/SectionHeading";
 import { projects } from "../utils/projects.js";
 
 const gridStyle = {
-  width: "80%",
+  height: "90vh",
+  width: "85%",
   margin: "auto",
   marginTop: "4rem",
+  overflow: "auto",
+  "@media (max-width:500px)": {
+    width: "100%",
+    paddingLeft: "2.2rem",
+  },
 };
 
 export default function Projects() {
   return (
     <>
-      {/* <Typography
-        color="#71C0D8"
-        variant="h4"
-        sx={{ paddingBottom: "1rem", paddingTop: "1rem", marginLeft: "2.5rem" }}
-      >
-        Projects
-      </Typography> */}
-      <div>
-        <Grid container columnSpacing={0.5} rowSpacing={6} sx={gridStyle}>
-          {projects.map(({ title, description, tech, hrefPage, hrefCode }) => (
-            <Grid
-              item
-              xs={12}
-              sm={6}
-              lg={4}
-              xl={3}
-              style={{ paddingTop: "4rem", paddingBottom: "2rem" }}
-              key={title}
-            >
-              <ProjectCard
-                title={title}
-                description={description}
-                tech={tech}
-                hrefPage={hrefPage}
-                hrefCode={hrefCode}
-              />
-            </Grid>
-          ))}
-        </Grid>
-      </div>
+      <SectionHeading>Some of my projects</SectionHeading>
+      <Grid container columnSpacing={1} rowSpacing={1} sx={gridStyle}>
+        {projects.map(({ title, description, tech, hrefPage, hrefCode }) => (
+          <Grid
+            item
+            xs={12}
+            sm={6}
+            lg={4}
+            xl={3}
+            key={title}
+            sx={{ paddingBottom: "2rem" }}
+          >
+            <ProjectCard
+              title={title}
+              description={description}
+              tech={tech}
+              hrefPage={hrefPage}
+              hrefCode={hrefCode}
+            />
+          </Grid>
+        ))}
+      </Grid>
     </>
   );
 }

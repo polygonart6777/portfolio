@@ -22,7 +22,7 @@ export default function Social() {
   const socialItems = social.map((socialItem) => (
     <div
       key={socialItem.network.toLowerCase()}
-      style={{ paddingBottom: "1.25rem" }}
+      style={{ paddingBottom: "1.25rem", zIndex: 100 }}
     >
       <Link
         href={socialItem.url}

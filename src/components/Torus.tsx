@@ -8,10 +8,10 @@ export default function Torus() {
         position={[0, 0, 0]}
         rotation={[-5, 10, 3]}
         onClick={() => {
-          setOpacity(0.6);
+          setOpacity(0.7);
         }}
         onPointerOver={() => {
-          setOpacity(0.6);
+          setOpacity(0.7);
         }}
         onPointerOut={() => {
           setOpacity(0.5);

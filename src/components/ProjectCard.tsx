@@ -26,16 +26,21 @@ export default function ProjectCard({
   return (
     <Card
       sx={{
-        maxWidth: 320,
-        borderRadius: "2.5%",
+        maxWidth: 340,
+        border: 2,
         borderColor: "#3d3afb",
         boxShadow: "7px 10px 15px rgb(255,0,255,.5)",
-        transition: "transform 0.15s ease-in-out",
+        outline: "none",
         "&:hover": {
-          transform: "scale3d(1.025, 1.025, 1)",
+          transition: "transform 0.1s ease-in-out",
+          transform: "scale(1.025)",
+          border: 2,
+          borderColor: "#3d3afb",
+        },
+        "@media (max-width:500px)": {
+          maxWidth: 310,
         },
       }}
-      variant="outlined"
     >
       <CardActionArea href={hrefPage} target="_blank" rel="noreferrer">
         <CardHeader
@@ -117,10 +122,13 @@ export default function ProjectCard({
                 variant="body2"
                 color="#71C0D8"
                 sx={{
-                  fontSize: ".75rem",
+                  fontSize: ".8rem",
                   paddingBottom: ".5rem",
                   paddingInline: ".3rem",
                   fontFamily: "Space Mono",
+                  "@media (max-width:500px)": {
+                    fontSize: ".7rem",
+                  },
                 }}
               >
                 {techElement}

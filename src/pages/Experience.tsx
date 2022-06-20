@@ -1,114 +1,53 @@
 import * as React from "react";
-import Tabs from "@mui/material/Tabs";
-import Tab from "@mui/material/Tab";
-import Typography from "@mui/material/Typography";
 import Box from "@mui/material/Box";
+import useMediaQuery from "@mui/material/useMediaQuery";
 
-import { experience } from "../utils/experience.js";
+import SectionHeading from "../components/SectionHeading";
+import VerticalTabs from "../components/VerticalTabs";
+import HorizontalTabs from "../components/HorizontalTabs";
 
-interface TabPanelProps {
-  children?: React.ReactNode;
-  index: number;
-  value: number;
-}
-
-function TabPanel(props: TabPanelProps) {
-  const { children, value, index, ...other } = props;
+export default function Experience() {
+  const isMobile = useMediaQuery("(max-width:500px)");
 
   return (
-    <div
-      role="tabpanel"
-      hidden={value !== index}
-      id={`vertical-tabpanel-${index}`}
-      aria-labelledby={`vertical-tab-${index}`}
-      {...other}
-    >
-      {value === index && (
-        <Box component="h5" sx={{ paddingLeft: 3, color: "white" }}>
-          <Typography component="h5">{children}</Typography>
-        </Box>
-      )}
-    </div>
-  );
-}
-
-function a11yProps(index: number) {
-  return {
-    id: `vertical-tab-${index}`,
-    "aria-controls": `vertical-tabpanel-${index}`,
-  };
-}
-
-export default function VerticalTabs() {
-  const [value, setValue] = React.useState(0);
-
-  const handleChange = (event: React.SyntheticEvent, newValue: number) => {
-    setValue(newValue);
-  };
-
-  return (
-    <Box
-      component="div"
-      sx={{
-        display: "flex",
-        height: "100vh",
-        justifyContent: "center",
-        alignItems: "center",
-        alignContent: "center",
-        width: "80%",
-        margin: "auto",
-      }}
-    >
+    <>
+      <SectionHeading>My work engagements</SectionHeading>
       <Box
         component="div"
         sx={{
-          flexGrow: 1,
           display: "flex",
-          height: 300,
-          backgroundColor: "transparent",
-          borderTop: 1,
-          borderBottom: 1,
-          borderColor: "#71C0D8",
+          height: "90vh",
+          justifyContent: "center",
+          alignItems: "center",
+          alignContent: "center",
+          margin: "auto",
+          paddingBottom: "2rem",
+          paddingLeft: "2rem",
+          paddingTop: "2rem",
         }}
       >
-        <Tabs
-          orientation="vertical"
-          variant="scrollable"
-          visibleScrollbar
-          scrollButtons="auto"
-          value={value}
-          onChange={handleChange}
-          aria-label="experience"
-          // @ts-ignore: Unreachable code error
-          TabIndicatorProps={{ style: { background: "#3d3afb" } }}
+        <Box
+          component="div"
           sx={{
-            paddingTop: "2rem",
+            display: "flex",
+            height: 320,
+            backgroundColor: "transparent",
+            borderBottom: 1,
+            borderTop: 1,
+            borderColor: "#71C0D8",
+            width: 1100,
+            "@media (max-width:500px)": {
+              width: "100%",
+              height: 470,
+              paddingTop: "1rem",
+              borderTop: 1,
+              borderColor: "#71C0D8",
+            },
           }}
         >
-          {experience.map(({ company }, index) => (
-            <Tab
-              label={company}
-              {...a11yProps(index)}
-              sx={{
-                fontSize: 14,
-                fontFamily: "PT Serif",
-                textTransform: "none",
-                borderRight: 2,
-                borderColor: "#71C0D8",
-                color: "white",
-                "&.Mui-selected": {
-                  color: "rgb(165, 255, 165)",
-                },
-              }}
-            />
-          ))}
-        </Tabs>
-        {experience.map(({ company, position }, index) => (
-          <TabPanel value={value} index={index}>
-            {position}
-          </TabPanel>
-        ))}
+          {isMobile ? <HorizontalTabs /> : <VerticalTabs />}
+        </Box>
       </Box>
-    </Box>
+    </>
   );
 }
