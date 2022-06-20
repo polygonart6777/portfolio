@@ -13,19 +13,19 @@ export const social = [
   {
     network: "LinkedIn",
     username: "buricd",
-    url: "google.com",
+    url: "https://www.linkedin.com/in/dina-buric-a954ba193",
     icon: <LinkedInIcon sx={{ marginTop: "3px" }} />,
   },
   {
     network: "GitHub",
     username: "polygonart6777",
-    url: "https://github.com",
+    url: "https://github.com/polygonart6777",
     icon: <GitHubIcon sx={{ marginTop: "3px" }} />,
   },
   {
     network: "Twitter",
     username: "polygonart6777",
-    url: "twitter.com",
+    url: "https://twitter.com/polygonart6777",
     icon: <TwitterIcon sx={{ marginTop: "3px" }} />,
   },
 ];
