@@ -46,7 +46,7 @@ export default function NavMenu() {
             <ListItem key={id} onClick={() => setOpen(false)}>
               <ListItemButton
                 component={Link}
-                href={`/page#${id}`}
+                href={`#${id}`}
                 sx={{
                   "&:hover": {
                     backgroundColor: "#3634e1",
