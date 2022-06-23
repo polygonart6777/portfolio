@@ -39,7 +39,7 @@ const textContainerStyle = {
 export default function Home() {
   return (
     <>
-      <SectionHeading>A little bit about me</SectionHeading>
+      <SectionHeading>A bit about me</SectionHeading>
       <Box component="div" sx={containerStyle}>
         <Grid container>
           <Grid item xs={12} sm={6}>

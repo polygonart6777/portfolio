@@ -11,7 +11,7 @@ export default function Experience() {
 
   return (
     <>
-      <SectionHeading>My work engagements</SectionHeading>
+      <SectionHeading>Work history</SectionHeading>
       <Box
         component="div"
         sx={{

@@ -15,7 +15,7 @@ export default function SectionHeading({ children }: SectionHeadingProps) {
       sx={{
         width: "60%",
         color: "rgb(113,192,216,1)",
-        fontSize: "3rem",
+        fontSize: 50,
         fontFamily: "PT Serif",
         paddingTop: "2rem",
         "&::before": {
@@ -27,6 +27,10 @@ export default function SectionHeading({ children }: SectionHeadingProps) {
         "@media (max-width:920px)": {
           fontSize: "2rem",
           width: "80%",
+        },
+        "@media (max-width:500px)": {
+          fontSize: "2rem",
+          width: "100%",
         },
       }}
     >

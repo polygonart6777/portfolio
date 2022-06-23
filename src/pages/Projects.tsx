@@ -20,7 +20,7 @@ const gridStyle = {
 export default function Projects() {
   return (
     <>
-      <SectionHeading>Some of my projects</SectionHeading>
+      <SectionHeading>My projects</SectionHeading>
       <Grid container columnSpacing={1} rowSpacing={1} sx={gridStyle}>
         {projects.map(({ title, description, tech, hrefPage, hrefCode }) => (
           <Grid

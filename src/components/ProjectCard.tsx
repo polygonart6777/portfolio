@@ -1,5 +1,6 @@
 import * as React from "react";
 import Card from "@mui/material/Card";
+import Box from "@mui/material/Box";
 import CardContent from "@mui/material/CardContent";
 import CardHeader from "@mui/material/CardHeader";
 import Typography from "@mui/material/Typography";
@@ -31,11 +32,13 @@ export default function ProjectCard({
         borderColor: "#3d3afb",
         boxShadow: "7px 10px 15px rgb(255,0,255,.5)",
         outline: "none",
+        backgroundColor: "#050A30",
         "&:hover": {
           transition: "transform 0.1s ease-in-out",
           transform: "scale(1.025)",
           border: 2,
           borderColor: "#3d3afb",
+          backgroundColor: "#050A30",
         },
         "@media (max-width:500px)": {
           maxWidth: 310,
@@ -43,15 +46,39 @@ export default function ProjectCard({
       }}
     >
       <CardActionArea href={hrefPage} target="_blank" rel="noreferrer">
-        <CardHeader
-          title={title}
-          action={
-            <div style={{ paddingTop: ".35rem" }}>
-              {hrefCode && (
+        <>
+          <CardHeader
+            title={title}
+            action={
+              <Box sx={{ paddingTop: ".35rem" }} component="div">
+                {hrefCode && (
+                  <IconButton
+                    aria-label="settings"
+                    size="small"
+                    href={hrefCode}
+                    target="_blank"
+                    rel="noreferrer"
+                    sx={{
+                      "&:hover": {
+                        backgroundColor: "#71C0D8",
+                      },
+                    }}
+                  >
+                    <GitHubIcon
+                      sx={{
+                        color: "#71C0D8",
+                        "&:hover": {
+                          color: "black",
+                        },
+                      }}
+                      fontSize="small"
+                    />
+                  </IconButton>
+                )}
                 <IconButton
                   aria-label="settings"
                   size="small"
-                  href={hrefCode}
+                  href={hrefPage}
                   target="_blank"
                   rel="noreferrer"
                   sx={{
@@ -60,7 +87,7 @@ export default function ProjectCard({
                     },
                   }}
                 >
-                  <GitHubIcon
+                  <SurfingIcon
                     sx={{
                       color: "#71C0D8",
                       "&:hover": {
@@ -70,72 +97,49 @@ export default function ProjectCard({
                     fontSize="small"
                   />
                 </IconButton>
-              )}
-              <IconButton
-                aria-label="settings"
-                size="small"
-                href={hrefPage}
-                target="_blank"
-                rel="noreferrer"
-                sx={{
-                  "&:hover": {
-                    backgroundColor: "#71C0D8",
-                  },
-                }}
-              >
-                <SurfingIcon
+              </Box>
+            }
+            sx={{
+              backgroundColor: "#050A30",
+              color: "#30D5C8",
+            }}
+          />
+          <CardContent
+            sx={{
+              display: "flex",
+              flexDirection: "column",
+              height: "12rem",
+              backgroundColor: "#050A30",
+            }}
+          >
+            <Typography color="#71C0D8" sx={{ paddingBottom: ".5rem" }}>
+              {description}
+            </Typography>
+            <Box
+              component="div"
+              sx={{ display: "flex", alignItems: "flex-end", flexGrow: 1 }}
+            >
+              {tech.map((techElement) => (
+                <Box
+                  key={techElement}
+                  component="div"
                   sx={{
+                    fontSize: 13,
                     color: "#71C0D8",
-                    "&:hover": {
-                      color: "black",
+                    paddingBottom: ".5rem",
+                    paddingInline: ".3rem",
+                    fontFamily: "Space Mono",
+                    "@media (max-width:500px)": {
+                      fontSize: ".7rem",
                     },
                   }}
-                  fontSize="small"
-                />
-              </IconButton>
-            </div>
-          }
-          sx={{
-            backgroundColor: "#050A30",
-            color: "#30D5C8",
-          }}
-        />
-        <CardContent
-          sx={{
-            display: "flex",
-            flexDirection: "column",
-            height: "12rem",
-            backgroundColor: "#050A30",
-          }}
-        >
-          <Typography
-            variant="body2"
-            color="#71C0D8"
-            sx={{ paddingBottom: ".5rem" }}
-          >
-            {description}
-          </Typography>
-          <div style={{ display: "flex", alignItems: "flex-end", flexGrow: 1 }}>
-            {tech.map((techElement) => (
-              <Typography
-                key={techElement}
-                variant="body2"
-                color="#71C0D8"
-                sx={{
-                  fontSize: ".8rem",
-                  paddingBottom: ".5rem",
-                  paddingInline: ".3rem",
-                  fontFamily: "Space Mono",
-                  "@media (max-width:500px)": {
-                    fontSize: ".7rem",
-                  },
-                }}
-              >
-                {techElement}
-              </Typography>
-            ))}
-          </div>
-        </CardContent>
+                >
+                  {techElement}
+                </Box>
+              ))}
+            </Box>
+          </CardContent>
+        </>
       </CardActionArea>
     </Card>
   );
