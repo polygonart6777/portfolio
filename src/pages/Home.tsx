@@ -16,7 +16,7 @@ const layoutStyle = {
   alignItems: "center",
   displayContent: "center",
   width: "100%",
-  height: "100vh",
+  height: "90vh",
   zIndex: "10",
 };
 

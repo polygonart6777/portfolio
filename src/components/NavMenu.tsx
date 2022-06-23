@@ -1,5 +1,5 @@
 import React from "react";
-import { HashLink } from "react-router-hash-link";
+import AppBar from "@mui/material/AppBar";
 
 import IconButton from "@mui/material/IconButton";
 import Box from "@mui/material/Box";
@@ -9,57 +9,59 @@ import ListItem from "@mui/material/ListItem";
 import ListItemText from "@mui/material/ListItemText";
 import ListItemButton from "@mui/material/ListItemButton";
 import Link from "@mui/material/Link";
-import { navigationLinks } from "../utils/navigation.js";
 import MenuIcon from "@mui/icons-material/Menu";
+import Toolbar from "@mui/material/Toolbar";
+
+import { navigationLinks } from "../utils/navigation.js";
+import styles from "./NavBar.module.scss";
 
 export default function NavMenu() {
   const [open, setOpen] = React.useState(false);
 
   return (
-    <Box
-      component="div"
-      sx={{
-        position: "absolute",
-        top: "2rem",
-        right: "2rem",
-        zIndex: "2",
-      }}
-    >
-      <IconButton onClick={() => setOpen(true)}>
-        <MenuIcon fontSize="large" sx={{ color: "white" }} />
-      </IconButton>
-      <Drawer
-        open={open}
-        onClose={() => setOpen(false)}
-        onOpen={() => setOpen(true)}
-        anchor="right"
-        PaperProps={{
-          sx: {
-            width: 200,
-            backgroundColor: "#3d3afb",
-            color: "white ",
-          },
-        }}
-      >
-        <List>
-          {navigationLinks.map(({ name, id }) => (
-            <ListItem key={id} onClick={() => setOpen(false)}>
-              <ListItemButton
-                component={Link}
-                href={`#${id}`}
-                sx={{
-                  "&:hover": {
-                    backgroundColor: "#3634e1",
-                    transform: "scale3d(1.05, 1.05, 1)",
-                  },
-                }}
-              >
-                <ListItemText primary={name} />
-              </ListItemButton>
-            </ListItem>
-          ))}
-        </List>
-      </Drawer>
-    </Box>
+    <>
+      <AppBar position="static">
+        <>
+          <Toolbar disableGutters className={styles.NavBar}>
+            <Box component="div">
+              <IconButton onClick={() => setOpen(true)}>
+                <MenuIcon fontSize="large" sx={{ color: "white" }} />
+              </IconButton>
+            </Box>
+          </Toolbar>
+          <Drawer
+            open={open}
+            onClose={() => setOpen(false)}
+            onOpen={() => setOpen(true)}
+            anchor="right"
+            PaperProps={{
+              sx: {
+                backgroundColor: "#3d3afb",
+                color: "white ",
+              },
+            }}
+          >
+            <List>
+              {navigationLinks.map(({ name, id }) => (
+                <ListItem key={id} onClick={() => setOpen(false)}>
+                  <ListItemButton
+                    component={Link}
+                    href={`#${id}`}
+                    sx={{
+                      "&:hover": {
+                        backgroundColor: "#3634e1",
+                        transform: "scale3d(1.05, 1.05, 1)",
+                      },
+                    }}
+                  >
+                    <ListItemText primary={name} />
+                  </ListItemButton>
+                </ListItem>
+              ))}
+            </List>
+          </Drawer>
+        </>
+      </AppBar>
+    </>
   );
 }

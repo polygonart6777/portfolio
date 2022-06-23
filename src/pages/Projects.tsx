@@ -6,7 +6,6 @@ import SectionHeading from "../components/SectionHeading";
 import { projects } from "../utils/projects.js";
 
 const gridStyle = {
-  height: "90vh",
   width: "85%",
   margin: "auto",
   marginTop: "4rem",

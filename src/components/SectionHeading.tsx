@@ -29,7 +29,8 @@ export default function SectionHeading({ children }: SectionHeadingProps) {
           width: "80%",
         },
         "@media (max-width:500px)": {
-          fontSize: "2rem",
+          paddingTop: "1.5rem",
+          fontSize: "1.5rem",
           width: "100%",
         },
       }}

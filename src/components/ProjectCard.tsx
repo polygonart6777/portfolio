@@ -41,7 +41,7 @@ export default function ProjectCard({
           backgroundColor: "#050A30",
         },
         "@media (max-width:500px)": {
-          maxWidth: 310,
+          maxWidth: 300,
         },
       }}
     >
