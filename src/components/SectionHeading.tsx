@@ -17,7 +17,7 @@ export default function SectionHeading({ children }: SectionHeadingProps) {
         color: "rgb(113,192,216,1)",
         fontSize: 50,
         fontFamily: "PT Serif",
-        paddingTop: "2rem",
+        paddingTop: "3rem",
         "&::before": {
           borderTop: "medium solid #3d3afb",
         },

@@ -8,22 +8,20 @@ import { navigationLinks } from "../utils/navigation.js";
 
 export default function NavBar() {
   return (
-    <Box component="div">
-      <AppBar position="static" style={{ boxShadow: "none" }}>
-        <Toolbar className={styles.NavBar}>
-          {navigationLinks.map(({ name, id }) => (
-            <Box
-              key={id}
-              component="div"
-              sx={{ fontSize: 25, paddingLeft: "1rem", paddingRight: "1rem" }}
-            >
-              <HashLink smooth to={`#${id}`}>
-                {name}
-              </HashLink>
-            </Box>
-          ))}
-        </Toolbar>
-      </AppBar>
-    </Box>
+    <AppBar position="sticky" style={{ boxShadow: "none" }}>
+      <Toolbar className={styles.NavBar}>
+        {navigationLinks.map(({ name, id }) => (
+          <Box
+            key={id}
+            component="div"
+            sx={{ fontSize: 25, paddingLeft: "1rem", paddingRight: "1rem" }}
+          >
+            <HashLink smooth to={`#${id}`}>
+              {name}
+            </HashLink>
+          </Box>
+        ))}
+      </Toolbar>
+    </AppBar>
   );
 }
