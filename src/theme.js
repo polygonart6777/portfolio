@@ -60,7 +60,7 @@ export const DarkTheme = responsiveFontSizes(
             fontFamily: "Roboto Mono, monospace",
             backgroundColor: "#ff5cb8",
             color: "white",
-            fontSize: 11,
+            fontSize: 14,
           },
         },
       },

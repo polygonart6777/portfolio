@@ -35,9 +35,10 @@ function TabPanel(props: TabPanelProps) {
         <Box
           component="h5"
           sx={{
+            paddingTop: "1rem",
             paddingLeft: 3,
             color: "white",
-            height: 280,
+            height: 350,
             overflow: "auto",
             width: 900,
             "@media (max-width:920px)": {
@@ -82,11 +83,11 @@ export default function VerticalTabs() {
         aria-label="experience"
         // @ts-ignore: Unreachable code error
         TabIndicatorProps={{
-          style: { background: "rgb(165, 255, 165)" },
+          style: { background: "#30D5C8" },
         }}
         sx={{
-          height: 320,
-          paddingTop: 3,
+          height: 420,
+          paddingTop: 6,
         }}
       >
         {experience.map(({ company }, index) => (
@@ -94,7 +95,7 @@ export default function VerticalTabs() {
             label={company}
             {...a11yProps(index)}
             sx={{
-              fontSize: 16,
+              fontSize: 18,
               fontFamily: "PT Serif",
               textTransform: "none",
               borderRight: 2,
@@ -102,10 +103,10 @@ export default function VerticalTabs() {
               color: "white",
               "&:hover": {
                 backgroundColor: "rgb(15,15,60)",
-                fontSize: 16.25,
+                fontSize: 18.25,
               },
               "&.Mui-selected": {
-                color: "rgb(165, 255, 165,1)",
+                color: "#30D5C8",
               },
               "@media (max-width:920px)": {
                 fontSize: 12,
@@ -130,15 +131,16 @@ export default function VerticalTabs() {
               }}
             >
               <Grid item sm={6} md={5}>
-                <Typography
+                <Box
+                  component="div"
                   sx={{
-                    color: "rgb(165, 255, 165)",
+                    color: "#30D5C8",
                     width: "100%",
-                    fontSize: "14",
+                    fontSize: 22,
                   }}
                 >
                   {position}
-                </Typography>
+                </Box>
               </Grid>
               {isDesktop && (
                 <Grid item xs={4}>
@@ -157,7 +159,7 @@ export default function VerticalTabs() {
               </Grid>
             </Grid>
             {
-              <Box component="div">
+              <Box component="div" sx={{ paddingTop: "1rem" }}>
                 <List>
                   {tasks.map((tasks) => (
                     <ListItem disablePadding>
@@ -169,7 +171,7 @@ export default function VerticalTabs() {
                         <ListItemText
                           primary={tasks}
                           sx={{
-                            fontSize: 16,
+                            fontSize: 18,
                             "@media (max-width:920px)": {
                               fontSize: 12,
                             },

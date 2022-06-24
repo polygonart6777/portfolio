@@ -5,6 +5,7 @@ import { OrbitControls } from "@react-three/drei";
 import Typography from "@mui/material/Typography";
 import Grid from "@mui/material/Grid";
 import Hidden from "@mui/material/Hidden";
+import useMediaQuery from "@mui/material/useMediaQuery";
 
 import Social from "../components/Social";
 import FloatSocial from "../components/FloatSocial";
@@ -38,11 +39,12 @@ const titleStyle = {
 const canvasStyle = {
   height: "100%",
   width: "100%",
-  zIndex: "0",
+  overflow: "scroll",
 };
 const subtitleStyle = { textAlign: "start", zIndex: "5" };
 
 export default function Home() {
+  const isMobile = useMediaQuery("(max-width:650px)");
   return (
     <>
       <div style={layoutStyle}>
@@ -75,7 +77,7 @@ export default function Home() {
           </Grid>
         </Grid>
         <Canvas style={canvasStyle}>
-          <OrbitControls enableZoom={false} />
+          <OrbitControls enableZoom={false} enabled={isMobile ? false : true} />
           <ambientLight intensity={0.5} />
           <directionalLight position={[-2, 5, 2]} intensity={1} />
           <Torus></Torus>

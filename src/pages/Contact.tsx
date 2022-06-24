@@ -18,18 +18,19 @@ const contactStyle = {
 export default function Home() {
   return (
     <>
-      <SectionHeading>Contact details</SectionHeading>
+      <SectionHeading>Get in touch</SectionHeading>
       <div style={contactStyle}>
         <Box
           component="h2"
           sx={{
             width: "50%",
             "@media (max-width:650px)": {
-              width: "88%",
+              width: "80%",
             },
             border: 1,
             borderColor: "#30D5C8",
             padding: "3rem",
+            boxShadow: "6px 8px 15px #30D5C8",
           }}
         >
           <Typography
@@ -58,7 +59,7 @@ export default function Home() {
               variant="contained"
               href={`mailto:buricd6777@gmail.com`}
               sx={{
-                backgroundColor: "#30D5C8",
+                backgroundColor: "rgb(113,192,216,1)",
                 color: "black",
                 "&:hover": {
                   backgroundColor: "#71C0D8",

@@ -31,7 +31,7 @@ export default function Experience() {
           component="div"
           sx={{
             display: "flex",
-            height: 320,
+            height: 420,
             backgroundColor: "transparent",
             borderBottom: 1,
             borderTop: 1,
