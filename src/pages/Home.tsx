@@ -9,6 +9,7 @@ import useMediaQuery from "@mui/material/useMediaQuery";
 import IconButton from "@mui/material/IconButton";
 import Box from "@mui/material/Box";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
+import { HashLink } from "react-router-hash-link";
 
 import Social from "../components/Social";
 import Torus from "../components/Torus";
@@ -103,19 +104,21 @@ export default function Home() {
         }}
       >
         <Hidden smUp>
-          <IconButton
-            size="large"
-            sx={{
-              backgroundColor: "#71C0D8",
-              opacity: ".75",
-              "&:hover": {
-                backgroundColor: "rgb(255,0,255,.5)",
-                transition: "all 0.5s ease",
-              },
-            }}
-          >
-            <ExpandMoreIcon sx={{ fontColor: "black" }} />
-          </IconButton>
+          <HashLink smooth to={`#experience`}>
+            <IconButton
+              size="large"
+              sx={{
+                backgroundColor: "#71C0D8",
+                opacity: ".75",
+                "&:hover": {
+                  backgroundColor: "rgb(255,0,255,.5)",
+                  transition: "all 0.5s ease",
+                },
+              }}
+            >
+              <ExpandMoreIcon sx={{ color: "black)" }} />
+            </IconButton>
+          </HashLink>
         </Hidden>
       </Box>
     </>
