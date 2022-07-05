@@ -6,9 +6,11 @@ import Typography from "@mui/material/Typography";
 import Grid from "@mui/material/Grid";
 import Hidden from "@mui/material/Hidden";
 import useMediaQuery from "@mui/material/useMediaQuery";
+import IconButton from "@mui/material/IconButton";
+import Box from "@mui/material/Box";
+import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 
 import Social from "../components/Social";
-import FloatSocial from "../components/FloatSocial";
 import Torus from "../components/Torus";
 
 const layoutStyle = {
@@ -41,7 +43,12 @@ const canvasStyle = {
   width: "100%",
   overflow: "scroll",
 };
-const subtitleStyle = { textAlign: "start", zIndex: "5" };
+const subtitleStyle = {
+  textAlign: "start",
+  zIndex: "10",
+  "@media (max-width:650px)": { width: "200px" },
+  wordWrap: "break-word",
+};
 
 export default function Home() {
   const isMobile = useMediaQuery("(max-width:650px)");
@@ -86,9 +93,31 @@ export default function Home() {
       <Hidden smDown>
         <Social />
       </Hidden>
-      <Hidden smUp>
-        <FloatSocial />
-      </Hidden>
+      <Box
+        component="div"
+        sx={{
+          position: "absolute",
+          bottom: "2rem",
+          left: "11rem",
+          zIndex: "100",
+        }}
+      >
+        <Hidden smUp>
+          <IconButton
+            size="large"
+            sx={{
+              backgroundColor: "#71C0D8",
+              opacity: ".75",
+              "&:hover": {
+                backgroundColor: "rgb(255,0,255,.5)",
+                transition: "all 0.5s ease",
+              },
+            }}
+          >
+            <ExpandMoreIcon sx={{ fontColor: "black" }} />
+          </IconButton>
+        </Hidden>
+      </Box>
     </>
   );
 }

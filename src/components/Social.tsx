@@ -1,5 +1,6 @@
 import React from "react";
 import Link from "@mui/material/Link";
+import Box from "@mui/material/Box";
 import Tooltip from "@mui/material/Tooltip";
 import IconButton from "@mui/material/IconButton";
 import Zoom from "@mui/material/Zoom";
@@ -19,9 +20,10 @@ const iconButtonStyle = {
 
 export default function Social() {
   const socialItems = social.map((socialItem) => (
-    <div
+    <Box
       key={socialItem.network.toLowerCase()}
-      style={{ paddingBottom: "1.25rem", zIndex: 100 }}
+      component="div"
+      sx={{ paddingBottom: "1.25rem" }}
     >
       <Link
         href={socialItem.url}
@@ -45,19 +47,21 @@ export default function Social() {
           </IconButton>
         </Tooltip>
       </Link>
-    </div>
+    </Box>
   ));
 
   return (
-    <div
-      style={{
+    <Box
+      component="div"
+      sx={{
         position: "absolute",
         bottom: "2rem",
         right: "2rem",
-        zIndex: "10",
+        zIndex: "100",
+        "@media (max-width:650px)": { bottom: "4rem" },
       }}
     >
       {socialItems}
-    </div>
+    </Box>
   );
 }

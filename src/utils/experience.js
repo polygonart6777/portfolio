@@ -7,12 +7,10 @@ export const experience = [
     years: yearsDiff("01-07-2020", "today"),
     tasks: [
       "Write clean, efficient and performant code tested both by unit and integration tests",
-      "Worked with designers, product managers and devs to improve Checkfront's design system written using React and Storybook.",
-      "Researched the availability algorithm that powers the app, mainly written in PHP",
-      "Led meetings with senior stakeholders, collected feedback, and created documentation on why we should leverage Postgres to handle more of the logic of the algorithm",
-      "Created a Recommendation Algorithm using PostgreSQL, Hasura and GraphQL that won an award in our yearly company hackathon",
-      "Led Agile processes within a Scrum Master orientation, leading daily standup, grooming, and retros",
-      "Mentored co-op students, helping them get their tickets across the board and be able to demo their work",
+      "Collaborated with designers, promoting our design system and helping market our brand.",
+      "Led meetings with stakeholders and created documentation on our availability algorithm.",
+      "Co-created an award winning Recommendation Algorithm using PostgreSQL and Hasura.",
+      "Mentored co-op students, helping them get their tickets across the board and be ready to demo.",
     ],
   },
   {

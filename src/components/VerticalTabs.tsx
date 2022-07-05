@@ -39,7 +39,7 @@ function TabPanel(props: TabPanelProps) {
             paddingLeft: 3,
             color: "white",
             height: 350,
-            overflow: "auto",
+            overflow: "hidden",
             width: 900,
             "@media (max-width:920px)": {
               width: 500,
@@ -86,8 +86,8 @@ export default function VerticalTabs() {
           style: { background: "#30D5C8" },
         }}
         sx={{
-          height: 420,
-          paddingTop: 6,
+          height: 380,
+          paddingTop: 14,
         }}
       >
         {experience.map(({ company }, index) => (

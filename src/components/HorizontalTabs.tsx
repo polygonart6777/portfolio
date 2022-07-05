@@ -34,7 +34,7 @@ function TabPanel(props: TabPanelProps) {
           component="h5"
           sx={{
             color: "white",
-            maxheight: 220,
+            maxHeight: 570,
             overflow: "auto",
             width: "100%",
           }}
@@ -136,7 +136,7 @@ export default function HorizontalTabs() {
                 component="div"
                 sx={{
                   width: "100%",
-                  height: 340,
+                  height: 400,
                 }}
               >
                 <List>
