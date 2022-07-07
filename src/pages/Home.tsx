@@ -22,7 +22,7 @@ const layoutStyle = {
   width: '100%',
   height: '90vh',
   zIndex: '10',
-  overflow: 'scroll',
+  overflow: 'hidden',
 };
 
 const gridStyle = {

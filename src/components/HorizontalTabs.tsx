@@ -1,16 +1,16 @@
-import * as React from "react";
-import Tabs from "@mui/material/Tabs";
-import Tab from "@mui/material/Tab";
-import Typography from "@mui/material/Typography";
-import Box from "@mui/material/Box";
-import List from "@mui/material/List";
-import ListItem from "@mui/material/ListItem";
-import ListItemButton from "@mui/material/ListItemButton";
-import ListItemText from "@mui/material/ListItemText";
-import Grid from "@mui/material/Grid";
+import * as React from 'react';
+import Tabs from '@mui/material/Tabs';
+import Tab from '@mui/material/Tab';
+import Typography from '@mui/material/Typography';
+import Box from '@mui/material/Box';
+import List from '@mui/material/List';
+import ListItem from '@mui/material/ListItem';
+import ListItemButton from '@mui/material/ListItemButton';
+import ListItemText from '@mui/material/ListItemText';
+import Grid from '@mui/material/Grid';
 
-import RightArrow from "@mui/icons-material/ArrowRight";
-import { experience } from "../utils/experience.js";
+import RightArrow from '@mui/icons-material/ArrowRight';
+import { experience } from '../utils/experience.js';
 
 interface TabPanelProps {
   children?: React.ReactNode;
@@ -33,10 +33,10 @@ function TabPanel(props: TabPanelProps) {
         <Box
           component="h5"
           sx={{
-            color: "white",
+            color: 'white',
             maxHeight: 570,
-            overflow: "auto",
-            width: "100%",
+            overflow: 'hidden',
+            width: '100%',
           }}
         >
           <Typography>{children}</Typography>
@@ -49,7 +49,7 @@ function TabPanel(props: TabPanelProps) {
 function a11yProps(index: number) {
   return {
     id: `simple-tab-${index}`,
-    "aria-controls": `simple-tabpanel-${index}`,
+    'aria-controls': `simple-tabpanel-${index}`,
   };
 }
 
@@ -61,7 +61,7 @@ export default function HorizontalTabs() {
   };
 
   return (
-    <Box component="div" sx={{ width: "100%" }}>
+    <Box component="div" sx={{ width: '100%' }}>
       <Box component="div">
         <Tabs
           value={value}
@@ -72,19 +72,19 @@ export default function HorizontalTabs() {
           allowScrollButtonsMobile
           // @ts-ignore: Unreachable code error
           TabIndicatorProps={{
-            style: { background: "rgb(165, 255, 165)" },
+            style: { background: 'rgb(165, 255, 165)' },
           }}
           sx={{
             fontSize: 12,
-            fontFamily: "PT Serif",
-            textTransform: "none",
-            color: "white",
-            "&:hover": {
-              backgroundColor: "rgb(15,15,60)",
+            fontFamily: 'PT Serif',
+            textTransform: 'none',
+            color: 'white',
+            '&:hover': {
+              backgroundColor: 'rgb(15,15,60)',
               fontSize: 12.25,
             },
-            "&.Mui-selected": {
-              color: "rgb(165, 255, 165,1)",
+            '&.Mui-selected': {
+              color: 'rgb(165, 255, 165,1)',
             },
           }}
         >
@@ -94,15 +94,15 @@ export default function HorizontalTabs() {
               {...a11yProps(index)}
               sx={{
                 fontSize: 12,
-                fontFamily: "PT Serif",
-                textTransform: "none",
-                color: "white",
-                "&:hover": {
-                  backgroundColor: "rgb(15,15,60)",
+                fontFamily: 'PT Serif',
+                textTransform: 'none',
+                color: 'white',
+                '&:hover': {
+                  backgroundColor: 'rgb(15,15,60)',
                   fontSize: 12.25,
                 },
-                "&.Mui-selected": {
-                  color: "rgb(165, 255, 165,1)",
+                '&.Mui-selected': {
+                  color: 'rgb(165, 255, 165,1)',
                 },
               }}
             />
@@ -113,29 +113,26 @@ export default function HorizontalTabs() {
         <TabPanel value={value} index={index}>
           <>
             <Grid container spacing={1}>
-              <Grid item xs={9}>
+              <Grid item xs={8}>
                 <Typography
                   sx={{
-                    color: "rgb(165, 255, 165)",
-                    width: "100%",
-                    paddingLeft: "1rem",
+                    color: 'rgb(165, 255, 165)',
+                    width: '100%',
+                    paddingLeft: '1rem',
                   }}
                 >
                   {position}
                 </Typography>
               </Grid>
-
-              <Grid item xs={3}>
-                <Typography sx={{ color: "rgb(113,192,216,1)" }}>
-                  {years["years"]} {years["years"] !== 1 ? "years" : "year"}
-                </Typography>
+              <Grid item xs={4}>
+                <Typography sx={{ color: 'rgb(113,192,216,.75)', fontSize: 12 }}>{dates}</Typography>
               </Grid>
             </Grid>
             {
               <Box
                 component="div"
                 sx={{
-                  width: "100%",
+                  width: '100%',
                   height: 400,
                 }}
               >
@@ -143,14 +140,11 @@ export default function HorizontalTabs() {
                   {tasks.map((tasks) => (
                     <ListItem disablePadding>
                       <ListItemButton>
-                        <RightArrow
-                          fontSize="medium"
-                          sx={{ color: "#3d3afb" }}
-                        />
+                        <RightArrow fontSize="medium" sx={{ color: '#3d3afb' }} />
                         <ListItemText
                           primary={tasks}
                           primaryTypographyProps={{
-                            style: { fontSize: ".8rem" },
+                            style: { fontSize: '.8rem' },
                           }}
                         />
                       </ListItemButton>
