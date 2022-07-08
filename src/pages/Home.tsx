@@ -1,4 +1,5 @@
 import React from 'react';
+import { HashLink } from 'react-router-hash-link';
 import { Canvas } from '@react-three/fiber';
 import { OrbitControls } from '@react-three/drei';
 
@@ -9,7 +10,7 @@ import useMediaQuery from '@mui/material/useMediaQuery';
 import IconButton from '@mui/material/IconButton';
 import Box from '@mui/material/Box';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
-import { HashLink } from 'react-router-hash-link';
+import Backdrop from '@mui/material/Backdrop';
 
 import Social from '../components/Social';
 import Torus from '../components/Torus';
@@ -22,7 +23,7 @@ const layoutStyle = {
   width: '100%',
   height: '90vh',
   zIndex: '10',
-  overflow: 'hidden',
+  overflow: 'scroll',
 };
 
 const gridStyle = {
@@ -43,6 +44,16 @@ const titleStyle = {
 const canvasStyle = {
   height: '100%',
   width: '100%',
+  overflow: 'scroll',
+};
+
+const overlay = {
+  position: 'sticky',
+  top: 0,
+  left: 0,
+  height: '100%',
+  width: '100%',
+  zIndex: 1000,
   overflow: 'scroll',
 };
 
@@ -71,7 +82,7 @@ export default function Home() {
           </Grid>
         </Grid>
         <Canvas style={canvasStyle}>
-          <OrbitControls enableZoom={false} enabled={false} />
+          <OrbitControls enableZoom={false} enabled={!isMobile} />
           <ambientLight intensity={0.5} />
           <directionalLight position={[-2, 5, 2]} intensity={1} />
           <Torus isMobile={isMobile}></Torus>
@@ -81,6 +92,7 @@ export default function Home() {
         <Social />
       </Hidden>
       <Hidden smUp>
+        <Box component="div" sx={overlay} />
         <Box
           component="div"
           sx={{
