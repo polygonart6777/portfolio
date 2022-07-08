@@ -44,11 +44,11 @@ const titleStyle = {
 const canvasStyle = {
   height: '100%',
   width: '100%',
-  overflow: 'scroll',
+  backgroundSize: 'cover',
 };
 
 const overlay = {
-  position: 'sticky',
+  position: 'fixed',
   top: 0,
   left: 0,
   height: '100%',
@@ -69,6 +69,12 @@ export default function Home() {
   return (
     <>
       <div style={layoutStyle}>
+        <Canvas style={canvasStyle}>
+          <OrbitControls enableZoom={false} enabled={!isMobile} />
+          <ambientLight intensity={0.5} />
+          <directionalLight position={[-2, 5, 2]} intensity={1} />
+          <Torus isMobile={isMobile}></Torus>
+        </Canvas>
         <Grid container direction="row" justifyContent="center" sx={gridStyle} rowSpacing={1}>
           <Grid item xs={12}>
             <Typography variant="h2" component="h2" color="#71C0D8" sx={titleStyle}>
@@ -81,12 +87,6 @@ export default function Home() {
             </Typography>
           </Grid>
         </Grid>
-        <Canvas style={canvasStyle}>
-          <OrbitControls enableZoom={false} enabled={!isMobile} />
-          <ambientLight intensity={0.5} />
-          <directionalLight position={[-2, 5, 2]} intensity={1} />
-          <Torus isMobile={isMobile}></Torus>
-        </Canvas>
       </div>
       <Hidden smDown>
         <Social />
