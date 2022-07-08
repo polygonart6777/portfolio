@@ -1,5 +1,4 @@
 import React from 'react';
-import { HashLink } from 'react-router-hash-link';
 import { Canvas } from '@react-three/fiber';
 import { OrbitControls } from '@react-three/drei';
 
@@ -7,10 +6,7 @@ import Typography from '@mui/material/Typography';
 import Grid from '@mui/material/Grid';
 import Hidden from '@mui/material/Hidden';
 import useMediaQuery from '@mui/material/useMediaQuery';
-import IconButton from '@mui/material/IconButton';
 import Box from '@mui/material/Box';
-import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
-import Backdrop from '@mui/material/Backdrop';
 
 import Social from '../components/Social';
 import Torus from '../components/Torus';
@@ -49,11 +45,11 @@ const canvasStyle = {
 
 const overlay = {
   position: 'fixed',
-  top: 0,
+  top: '4rem',
   left: 0,
   height: '100%',
   width: '100%',
-  zIndex: 1000,
+  zIndex: 100,
   overflow: 'scroll',
 };
 
@@ -88,38 +84,9 @@ export default function Home() {
           </Grid>
         </Grid>
       </div>
-      <Hidden smDown>
-        <Social />
-      </Hidden>
+      <Social />
       <Hidden smUp>
         <Box component="div" sx={overlay} />
-        <Box
-          component="div"
-          sx={{
-            position: 'absolute',
-            bottom: '1rem',
-            left: '11rem',
-            zIndex: '100',
-          }}
-        >
-          <HashLink smooth to={`#experience`}>
-            <IconButton
-              size="large"
-              sx={{
-                backgroundColor: '#71C0D8',
-                opacity: '.75',
-                '&:hover': {
-                  backgroundColor: '#71C0D8',
-                },
-                '&:selected': {
-                  backgroundColor: '#71C0D8',
-                },
-              }}
-            >
-              <ExpandMoreIcon sx={{ color: 'black)' }} />
-            </IconButton>
-          </HashLink>
-        </Box>
       </Hidden>
     </>
   );

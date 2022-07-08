@@ -12,8 +12,9 @@ const iconButtonStyle = {
   display: 'block',
   height: '2.5rem',
   width: '2.5rem',
-  opacity: '.5',
+  opacity: '.55',
   backgroundColor: '#3d3afb',
+  color: 'black',
   '&:hover': {
     backgroundColor: '#71C0D8',
     opacity: '1',
@@ -28,34 +29,9 @@ interface ToolbarMobileProps {
 export default function ToolbarMobile({ setOpen }: ToolbarMobileProps) {
   return (
     <Toolbar disableGutters className={styles.NavBar}>
-      <Grid container direction="row" justifyContent="flex-end">
-        {social.map((socialItem: any) => (
-          <Grid item xs={2} sx={{ paddingTop: '.75rem' }}>
-            <IconButton
-              sx={iconButtonStyle}
-              color="inherit"
-              href={socialItem.url}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              {socialItem.icon}
-            </IconButton>
-          </Grid>
-        ))}
-        <Grid
-          item
-          xs={4}
-          sx={{
-            display: 'flex',
-            justifyContent: 'flex-end',
-            paddingTop: '.25rem',
-          }}
-        >
-          <IconButton onClick={() => setOpen(true)}>
-            <MenuIcon fontSize="large" sx={{ color: 'white' }} />
-          </IconButton>
-        </Grid>
-      </Grid>
+      <IconButton onClick={() => setOpen(true)}>
+        <MenuIcon fontSize="large" sx={{ color: 'white' }} />
+      </IconButton>
     </Toolbar>
   );
 }
