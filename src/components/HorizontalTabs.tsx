@@ -12,6 +12,41 @@ import Grid from '@mui/material/Grid';
 import RightArrow from '@mui/icons-material/ArrowRight';
 import { experience } from '../utils/experience.js';
 
+const tabPanelStyle = {
+  color: 'white',
+  maxHeight: 570,
+  overflow: 'hidden',
+  width: '100%',
+};
+
+const tabsGroupStyle = {
+  fontSize: 12,
+  fontFamily: 'PT Serif',
+  textTransform: 'none',
+  color: 'white',
+  '&:hover': {
+    backgroundColor: 'rgb(15,15,60)',
+    fontSize: 12.25,
+  },
+  '&.Mui-selected': {
+    color: 'rgb(165, 255, 165,1)',
+  },
+};
+
+const tabStyle = {
+  fontSize: 12,
+  fontFamily: 'PT Serif',
+  textTransform: 'none',
+  color: 'white',
+  '&:hover': {
+    backgroundColor: 'rgb(15,15,60)',
+    fontSize: 12.25,
+  },
+  '&.Mui-selected': {
+    color: 'rgb(165, 255, 165,1)',
+  },
+};
+
 interface TabPanelProps {
   children?: React.ReactNode;
   index: number;
@@ -30,15 +65,7 @@ function TabPanel(props: TabPanelProps) {
       {...other}
     >
       {value === index && (
-        <Box
-          component="h5"
-          sx={{
-            color: 'white',
-            maxHeight: 570,
-            overflow: 'hidden',
-            width: '100%',
-          }}
-        >
+        <Box component="h5" sx={tabPanelStyle}>
           <Typography>{children}</Typography>
         </Box>
       )}
@@ -74,43 +101,15 @@ export default function HorizontalTabs() {
           TabIndicatorProps={{
             style: { background: 'rgb(165, 255, 165)' },
           }}
-          sx={{
-            fontSize: 12,
-            fontFamily: 'PT Serif',
-            textTransform: 'none',
-            color: 'white',
-            '&:hover': {
-              backgroundColor: 'rgb(15,15,60)',
-              fontSize: 12.25,
-            },
-            '&.Mui-selected': {
-              color: 'rgb(165, 255, 165,1)',
-            },
-          }}
+          sx={tabsGroupStyle}
         >
           {experience.map(({ company }, index) => (
-            <Tab
-              label={company}
-              {...a11yProps(index)}
-              sx={{
-                fontSize: 12,
-                fontFamily: 'PT Serif',
-                textTransform: 'none',
-                color: 'white',
-                '&:hover': {
-                  backgroundColor: 'rgb(15,15,60)',
-                  fontSize: 12.25,
-                },
-                '&.Mui-selected': {
-                  color: 'rgb(165, 255, 165,1)',
-                },
-              }}
-            />
+            <Tab key={index} label={company} sx={tabStyle} {...a11yProps(index)} />
           ))}
         </Tabs>
       </Box>
       {experience.map(({ position, dates, years, tasks }, index) => (
-        <TabPanel value={value} index={index}>
+        <TabPanel key={index} value={value} index={index}>
           <>
             <Grid container spacing={1}>
               <Grid item xs={8}>
@@ -138,7 +137,7 @@ export default function HorizontalTabs() {
               >
                 <List>
                   {tasks.map((tasks) => (
-                    <ListItem disablePadding>
+                    <ListItem key={tasks} disablePadding>
                       <ListItemButton>
                         <RightArrow fontSize="medium" sx={{ color: '#3d3afb' }} />
                         <ListItemText

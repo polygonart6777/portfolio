@@ -45,9 +45,8 @@ const canvasStyle = {
 
 const overlay = {
   position: 'fixed',
-  top: '4rem',
+  top: '3rem',
   left: 0,
-  height: '100%',
   width: '100%',
   zIndex: 100,
   overflow: 'scroll',
