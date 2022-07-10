@@ -10,14 +10,8 @@ import ListItemText from '@mui/material/ListItemText';
 import Grid from '@mui/material/Grid';
 
 import RightArrow from '@mui/icons-material/ArrowRight';
+import TabPanel from './TabPanel';
 import { experience } from '../utils/experience.js';
-
-const tabPanelStyle = {
-  color: 'white',
-  maxHeight: 570,
-  overflow: 'hidden',
-  width: '100%',
-};
 
 const tabsGroupStyle = {
   fontSize: 12,
@@ -29,7 +23,7 @@ const tabsGroupStyle = {
     fontSize: 12.25,
   },
   '&.Mui-selected': {
-    color: 'rgb(165, 255, 165,1)',
+    color: '#30D5C8',
   },
 };
 
@@ -43,35 +37,9 @@ const tabStyle = {
     fontSize: 12.25,
   },
   '&.Mui-selected': {
-    color: 'rgb(165, 255, 165,1)',
+    color: '#30D5C8',
   },
 };
-
-interface TabPanelProps {
-  children?: React.ReactNode;
-  index: number;
-  value: number;
-}
-
-function TabPanel(props: TabPanelProps) {
-  const { children, value, index, ...other } = props;
-
-  return (
-    <div
-      role="tabpanel"
-      hidden={value !== index}
-      id={`simple-tabpanel-${index}`}
-      aria-labelledby={`simple-tab-${index}`}
-      {...other}
-    >
-      {value === index && (
-        <Box component="h5" sx={tabPanelStyle}>
-          <Typography>{children}</Typography>
-        </Box>
-      )}
-    </div>
-  );
-}
 
 function a11yProps(index: number) {
   return {
@@ -99,7 +67,7 @@ export default function HorizontalTabs() {
           allowScrollButtonsMobile
           // @ts-ignore: Unreachable code error
           TabIndicatorProps={{
-            style: { background: 'rgb(165, 255, 165)' },
+            style: { background: '#30D5C8' },
           }}
           sx={tabsGroupStyle}
         >
@@ -108,14 +76,14 @@ export default function HorizontalTabs() {
           ))}
         </Tabs>
       </Box>
-      {experience.map(({ position, dates, years, tasks }, index) => (
+      {experience.map(({ position, dates, tasks }, index) => (
         <TabPanel key={index} value={value} index={index}>
           <>
             <Grid container spacing={1}>
               <Grid item xs={8}>
                 <Typography
                   sx={{
-                    color: 'rgb(165, 255, 165)',
+                    color: '#30D5C8',
                     width: '100%',
                     paddingLeft: '1rem',
                   }}

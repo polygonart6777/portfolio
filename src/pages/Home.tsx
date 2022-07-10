@@ -48,8 +48,7 @@ const overlay = {
   top: '3rem',
   left: 0,
   width: '100%',
-  zIndex: 105,
-  overflow: 'scroll',
+  height: '90vh',
 };
 
 const subtitleStyle = {
@@ -61,6 +60,7 @@ const subtitleStyle = {
 
 export default function Home() {
   const isMobile = useMediaQuery('(max-width:650px)');
+
   return (
     <>
       <div style={layoutStyle}>
