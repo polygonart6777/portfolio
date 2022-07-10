@@ -48,7 +48,7 @@ const overlay = {
   top: '3rem',
   left: 0,
   width: '100%',
-  zIndex: 100,
+  zIndex: 105,
   overflow: 'scroll',
 };
 
