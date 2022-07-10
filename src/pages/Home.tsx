@@ -73,7 +73,7 @@ export default function Home() {
         <Grid container direction="row" justifyContent="center" sx={gridStyle} rowSpacing={1}>
           <Grid item xs={12}>
             <Typography variant="h2" component="h2" color="#71C0D8" sx={titleStyle}>
-              Dr. Dina Buric
+              Dina Buric, PhD
             </Typography>
           </Grid>
           <Grid item xs={12}>
