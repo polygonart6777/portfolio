@@ -1,10 +1,24 @@
 export const experience = [
   {
+    company: 'Delving',
+    website: 'https://www.delving.co',
+    position: 'Software Developer',
+    dates: 'September 2022 - current',
+    years: yearsDiff('January 7, 2020', 'today'),
+    tasks: [
+      'Part of a fast paced team focused on rapid experimentation, learning and data driven decision making.',
+      'Everyday consisted with pair programming using the principles of test driven development.',
+      'Worked on all of the parts of the app; from queues in GCP to styling our MUI components.',
+      'Contributed to an algorithm to detect changes between Excel spreadsheets using local sensitive hashing, patience sort, and various distance metrics.',
+      'Made it easy for Excel users to keep using the software they love by generating a styled change report using OpenPyXl.',
+    ],
+  },
+  {
     company: 'Checkfront',
     website: 'https://www.checkfront.com',
     position: 'Software Developer',
-    dates: 'January 2020 - current',
-    years: yearsDiff('January 7, 2020', 'today'),
+    dates: 'January 2020 - August 2022',
+    years: yearsDiff('January 7, 2020', 'July 25, 2022'),
     tasks: [
       'Write clean, efficient and performant code tested both by unit and integration tests',
       'Collaborated with designers, promoting our design system and helping market our brand.',
