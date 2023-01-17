@@ -4,7 +4,7 @@ export const experience = [
     website: 'https://www.delving.co',
     position: 'Software Developer',
     dates: 'September 2022 - current',
-    years: yearsDiff('January 7, 2020', 'today'),
+    years: yearsDiff('September 7, 2022', 'today'),
     tasks: [
       'Part of a fast paced team focused on rapid experimentation, learning and data driven decision making.',
       'Everyday consisted with pair programming using the principles of test driven development.',
