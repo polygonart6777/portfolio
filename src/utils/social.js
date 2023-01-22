@@ -12,14 +12,14 @@ const iconStyle = {
 export const social = [
   {
     network: 'Google',
-    username: 'buricd6777@gmail.com',
-    url: 'mailto:buricd6777@gmail.com',
+    username: 'dina.m.buric@gmail.com',
+    url: 'mailto:dina.m.buric@gmail.com',
     icon: <GoogleIcon sx={iconStyle} />,
   },
   {
     network: 'LinkedIn',
     username: 'buricd',
-    url: 'https://www.linkedin.com/in/dina-buric-a954ba193',
+    url: 'https://www.linkedin.com/in/dina-buric',
     icon: <LinkedInIcon sx={iconStyle} />,
   },
   {

@@ -24,6 +24,9 @@ const navBarStyle = {
   a: {
     color: 'white',
     textDecoration: 'none',
+    '&:hover': {
+      color: '#71C0D8',
+    },
   },
 };
 

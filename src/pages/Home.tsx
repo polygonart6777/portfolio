@@ -7,6 +7,8 @@ import Grid from '@mui/material/Grid';
 import Hidden from '@mui/material/Hidden';
 import useMediaQuery from '@mui/material/useMediaQuery';
 import Box from '@mui/material/Box';
+import Button from '@mui/material/Button';
+import resume from '../utils/DinaBuricResume.pdf';
 
 import Social from '../components/Social';
 import Torus from '../components/Torus';
@@ -57,6 +59,14 @@ const subtitleStyle = {
   wordWrap: 'break-word',
 };
 
+const buttonStyle = {
+  backgroundColor: '#3d3afb',
+  color: 'black',
+  '&:hover': {
+    backgroundColor: '#ff5cb8',
+  },
+};
+
 export default function Home() {
   const isMobile = useMediaQuery('(max-width:650px)');
 
@@ -79,6 +89,11 @@ export default function Home() {
             <Typography variant="h5" component="h2" color="white" sx={subtitleStyle}>
               Software developer and math artist
             </Typography>
+          </Grid>
+          <Grid item xs={12} alignItems="center" sx={{ marginTop: '2rem' }}>
+            <Button variant="contained" sx={buttonStyle} href={resume} target="_blank">
+              Resume
+            </Button>
           </Grid>
         </Grid>
       </div>

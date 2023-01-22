@@ -13,10 +13,10 @@ export default function Torus({ isMobile }: TorusProps) {
         position={[0, 0, 0]}
         rotation={[-5, 10, 3]}
         onClick={() => {
-          !isMobile && setOpacity(0.52);
+          !isMobile && setOpacity(1);
         }}
         onPointerOver={() => {
-          !isMobile && setOpacity(0.52);
+          !isMobile && setOpacity(1);
         }}
         onPointerOut={() => {
           setOpacity(0.5);

@@ -105,7 +105,8 @@ export default function VerticalTabs() {
               )}
               <Grid item sm={6} md={3} sx={{ paddingRight: '1rem' }}>
                 <Typography sx={{ color: 'rgb(113,192,216,1)', fontSize: 12 }}>
-                  {years['years']} {years['years'] !== 1 ? 'years' : 'year'} {years['months']}{' '}
+                  {years['years'] > 1 && years['years']}{' '}
+                  {years['years'] > 1 ? 'years' : years['years'] == 1 ? 'year' : ''} {years['months']}{' '}
                   {years['months'] !== 1 ? 'months' : 'month'}
                 </Typography>
               </Grid>
