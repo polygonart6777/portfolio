@@ -5,7 +5,7 @@ interface TorusProps {
 }
 
 export default function Torus({ isMobile }: TorusProps) {
-  const [opacity, setOpacity] = React.useState(0.5);
+  const [radius, setRadius] = React.useState(1);
 
   return (
     <>
@@ -13,17 +13,17 @@ export default function Torus({ isMobile }: TorusProps) {
         position={[0, 0, 0]}
         rotation={[-5, 10, 3]}
         onClick={() => {
-          !isMobile && setOpacity(1);
+          !isMobile && setRadius(1.025);
         }}
         onPointerOver={() => {
-          !isMobile && setOpacity(1);
+          !isMobile && setRadius(1.025);
         }}
         onPointerOut={() => {
-          setOpacity(0.5);
+          setRadius(1);
         }}
       >
-        <torusBufferGeometry attach="geometry" args={[8, 2.6, 20, 80]} name="torus" />
-        <meshNormalMaterial opacity={opacity} transparent />
+        <torusBufferGeometry attach="geometry" args={[8, radius * 2.6, 20, 80]} name="torus" />
+        <meshNormalMaterial opacity={0.5} transparent />
       </mesh>
     </>
   );
