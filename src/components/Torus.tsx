@@ -23,7 +23,7 @@ export default function Torus({ isMobile }: TorusProps) {
         }}
       >
         <torusBufferGeometry attach="geometry" args={[8, radius * 2.6, 20, 80]} name="torus" />
-        <meshNormalMaterial opacity={0.5} transparent />
+        <meshNormalMaterial opacity={0.65} transparent />
       </mesh>
     </>
   );

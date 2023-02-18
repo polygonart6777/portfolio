@@ -61,7 +61,7 @@ const subtitleStyle = {
 
 const buttonStyle = {
   backgroundColor: '#3d3afb',
-  color: 'black',
+  color: 'white',
   '&:hover': {
     backgroundColor: '#ff5cb8',
   },
