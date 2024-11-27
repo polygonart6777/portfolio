@@ -1,10 +1,24 @@
 export const experience = [
   {
+    company: 'Marinelabs',
+    website: 'https://marinelabs.io/',
+    position: 'Software Developer',
+    dates: 'March 2023 - August 2024',
+    years: yearsDiff('March 20, 2023', 'August 12, 2024'),
+    tasks: [
+      'Sole full-time software engineer on hardware/firmware/software team',
+      'Visualize forecast data with the use of our own real time data as well as third party API.',
+      'Used machine learning resources to identify vessel wakes and display data in real time',
+      'Combine three.js with sonar detection',
+      'Research and build with new technologies with changing requests and project partnerships',
+    ],
+  },
+  {
     company: 'Delving',
     website: 'https://www.delving.co',
     position: 'Software Developer',
-    dates: 'September 2022 - current',
-    years: yearsDiff('September 7, 2022', 'today'),
+    dates: 'September 2022 - March 2023',
+    years: yearsDiff('September 7, 2022', 'March 1, 2023'),
     tasks: [
       'Part of a fast paced team focused on rapid experimentation, learning and data driven decision making.',
       'Everyday consisted with pair programming using the principles of test driven development.',

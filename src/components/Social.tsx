@@ -21,7 +21,7 @@ const iconButtonStyle = {
 export default function Social() {
   const socialItems = social.map((socialItem) => (
     <Box key={socialItem.network.toLowerCase()} component="div" sx={{ paddingBottom: '1.25rem' }}>
-      <Link href={socialItem.url} target="_blank" rel="noopener noreferrer" underline="none" color="inherit">
+      <Link href={socialItem.url} target="_blank" rel={socialItem.network.toLowerCase() == 'mastodon' ? "me" : "noopener noreferrer"} underline="none" color="inherit">
         <Tooltip title={socialItem.username} placement="left" TransitionComponent={Zoom} disableFocusListener>
           <IconButton sx={iconButtonStyle} color="inherit" aria-label={socialItem.network}>
             {socialItem.icon}
